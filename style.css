@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.heart-button {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: none;
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transform: rotate(-45deg);
+}
+
+.heart-button::before,
+.heart-button::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.heart-button::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart-button::after {
+    left: 50px;
+    top: 0;
+}

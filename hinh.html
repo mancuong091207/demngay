@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+   <link href="style.css" rel="stylesheet">
+    <style>
+                         
+ @font-face {
+    font-family: Valentine;
+    src: url(UVF-RixLoveFool.ttf);
+}          
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cccccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+			background-image: url("anh.jpg!w700wp");
+		font-family: Valentine;
+        }
+		
+        .book {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+			background-image: url("nen.jpg");
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 20px;
+            box-sizing: border-box;
+			
+        }
+        .active {
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+			border: 10px solid red;
+			border-radius: 12px;
+			padding: 5px;
+			background-color: red;
+			
+        }
+        button {
+		
+            padding: 15px 40px;
+            margin: 0 5px;
+            cursor: pointer;
+			background-color: white;
+			border-radius: 10px;
+			padding: 15px;
+		
+
+        }
+		button:hover
+{
+    width: 40%;
+    height: 60px;
+    background-color: red;
+    color:pink;
+	text-align:center;
+    text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+}
+button.selected
+{
+    color:pink;
+    text-shadow: 0 0 10px pink, 0 0 2 pink, 0 pink;
+}
+		h1
+		{
+		 vertical-align : middle;
+		}
+    </style>
+</head>
+<body>
+<div class="controls">
+        <button onclick="prevPage()">Hình Trước</button>
+        <button onclick="nextPage()">Hình Sau</button>
+    </div>
+<div class="book">
+    <div class="page active" id="page1">
+        <h2 align="center">Tấm hình chúc ngủ ngon đầu tiên 😊</h2>
+        <img src="1.jpg" alt="Hình ảnh trang 1" style="width:100%; height:auto;">
+       
+		
+    </div>
+    <div class="page" id="page2">
+          <h2 align="center">Tấm hình đầu tiên sau khi làm bồ tui😊</h2>
+        <img src="2.jpg" alt="Hình ảnh trang 2" style="width:100%; height:100%;">
+      
+    </div>
+    <div class="page" id="page3">
+         <h2 align="center">Tấm hình chúc ngủ ngon thứ 3😊</h2>
+        <img src="3.jpg" alt="Hình ảnh trang 3" style="width:100%; height:100%;">
+       
+    </div>
+	<div class="page" id="page4">
+         <h2 align="center">Đi metro và hù tui</h2>
+        <img src="4.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page5">
+         <h2 align="center">Cưng 🙈</h2>
+        <img src="a2.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+		<div class="page" id="page6">
+         <h2 align="center">Mặt trời của tui khi cười</h2>
+        <img src="a1.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page7">
+         <h2 align="center">Chuẩn bị sẵn sàng cho văn nghệ</h2>
+        <img src="5.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page8">
+         <h2 align="center">...</h2>
+        <img src="6.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page9">
+         <h2 align="center">Xinh như thế mà bỏ cái váy</h2>
+        <img src="7.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page10">
+         <h2 align="center">Đêm đầu ở Đà Lạt 😻</h2>
+        <img src="10.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page11">
+         <h2 align="center">Buổi sáng thứ 2 ở Đà Lạt</h2>
+        <img src="11.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page12">
+         <h2 align="center">Buổi trưa thứ 2 ở Đà Lạt</h2>
+        <img src="12.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page13">
+         <h2 align="center">Buổi tối cuối cùng của chuyến đi 😿</h2>
+        <img src="13.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page14">
+         <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+        <img src="14a.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+	
+	
+       
+    </div>
+	<div class="page" id="page15">
+            <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+     	<img src="14b.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page16">
+          <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+       	<img src="14c.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page17">
+          <h1 align="center" >2 tấm đặt biệt ==></h1>
+       
+       
+    </div>
+		<div class="page" id="page18">
+          <h2 align="center">Tấm ảnh đầu tiên 😝</h2>
+       	<img src="18.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+		<div class="page" id="page19">
+          <h2 align="center">2 siu phẩm lấy từ story mà tui siêu SIMPPPPPPP😍😍😍😍</h2>
+       	<img src="19.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page20">
+          <h1 align="center" >Vậy là hết rồi</h1>
+		
+          <h1 align="center" >Lưu hình trên đây không giới hạn dung lượng</h1>
+		  <h1 align="center" >Nhưng trong tương lai tui sẽ cố gắng lấp đầy nó.</h1>
+       
+       
+    </div>
+       
+       
+    </div>
+    
+</div>
+
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+
+    function showPage(index) {
+        pages.forEach((page, i) => {
+            page.classList.remove('active');
+            if (i === index) {
+                page.classList.add('active');
+            }
+        });
+    }
+
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+</script>
+
+</body>
+</html>
