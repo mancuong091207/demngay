@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+   <link href="style.css" rel="stylesheet">
+    <style>
+                         
+ @font-face {
+    font-family: Valentine;
+    src: url(Kissing-Season.ttf);
+} 
+	     @font-face {
+    font-family: Valentine1;
+    src: url(MJ-Chalkduster.ttf);
+}     
+	    
+        body {
+         
+            background-color: #cccccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+			background-image: url("anh.jpg!w700wp");
+		font-family: Valentine;
+        }
+		
+        .book {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+			background-image: url("nen.jpg");
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+		 .book1 {
+            width: 400px;
+            height: 500px;
+            background-color: black;
+		
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 20px;
+            box-sizing: border-box;
+			
+        }
+        .active {
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+			border: 1px solid red;
+			border-radius: 12px;
+		padding : 5px;
+			background-color: red;
+			
+        }
+        button {
+		
+            padding: 3px 7px;
+            margin: 0 5px;
+            cursor: pointer;
+			background-color: white;
+			border-radius: 10px;
+			
+		
+
+        }
+	    p{
+		
+		   margin: 0 auto;
+		    text-align: justify;
+		    width: 300px;
+		    font-family: "Times New Roman", Times, serif;
+			font-size: 30px;
+			color: white;
+	    }
+		
+
+		h1
+		{
+		 vertical-align : middle;
+		}
+    </style>
+</head>
+<body>
+<div class="controls">
+        <button onclick="prevPage()">Hình Trước</button>
+        <button onclick="nextPage()">Hình Sau</button>
+    </div>
+<div class="book">
+    <div class="page active" id="page1">
+        <h2 align="center">Tấm hình chúc ngủ ngon đầu tiên 😊</h2>
+        <img src="1.jpg" alt="Hình ảnh trang 1" style="width:100%; height:auto;">
+       
+		
+    </div>
+    <div class="page" id="page2">
+          <h2 align="center">Ngủ ngon thứ 2 và đầu tiên sau khi làm bồ mình😊</h2>
+        <img src="2.jpg" alt="Hình ảnh trang 2" style="width:100%; height:100%;">
+      
+    </div>
+    <div class="page" id="page3">
+         <h2 align="center">Tấm hình chúc ngủ ngon thứ 3😊</h2>
+        <img src="3.jpg" alt="Hình ảnh trang 3" style="width:100%; height:100%;">
+       
+    </div>
+	<div class="page" id="page4">
+         <h2 align="center">Hùuuuuu</h2>
+        <img src="4.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page5">
+         <h2 align="center">Cưng 🙈</h2>
+        <img src="a2.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+		<div class="page" id="page6">
+         <h2 align="center">Mặt trời cười</h2>
+        <img src="a1.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page7">
+         <h2 align="center">Chuẩn bị sẵn sàng cho văn nghệ</h2>
+        <img src="5.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page8">
+         <h2 align="center">3 chấm</h2>
+        <img src="6.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page9">
+         <h2 align="center">Tóc hơi sợ mà xinh quá!!!</h2>
+        <img src="7.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page10">
+         <h2 align="center">Đêm đầu ở Đà Lạt 😻</h2>
+        <img src="10.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page11">
+         <h2 align="center">Buổi sáng ngày 2</h2>
+        <img src="11.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page12">
+         <h2 align="center">Buổi trưa ngày 2</h2>
+        <img src="12.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page13">
+         <h2 align="center">Đêm cuối 😿</h2>
+        <img src="13.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page14">
+         <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+        <img src="14a.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+	
+	
+       
+    </div>
+	<div class="page" id="page15">
+            <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+     	<img src="14b.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page16">
+          <h2 align="center">Buổi sáng cuối cùng🔥🔥🔥</h2>
+       	<img src="14c.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	<div class="page" id="page17">
+          <h1 align="center" >Những tấm ảnh đặt biệt :)) ==></h1>
+       
+       
+    </div>
+		<div class="page" id="page18">
+          <h2 align="center">😝</h2>
+       	<img src="18.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+		<div class="page" id="page19">
+          <h2 align="center">2 siu phẩm khiến tui mê mệt và siêu SIMPPP😍😍😍😍😍</h2>
+       	<img src="19.jpg" alt="Hình ảnh trang 3" style="width:100%; height:auto;">
+       
+    </div>
+	
+      <div class="book1">
+   
+	<div class="page" id="page20">
+          <p>Hello cô bé của anh, thiệp viết tay nếu chữ không đọc được thì cũng không có ý nghĩa nên mong em thông cảm cho anh và xem thiệp trên đây nhé!</p>
+		<p>Cảm ơn em vì đã cho anh hiểu được ý nghĩa của ngày lễ này, cho anh lần đầu cảm thấy vui sướng vì một vài dòng tin nhắn.</p>
+	
+       
+       
+    </div>
+	<div class="page" id="page21">
+      
+		<p>Những tin nhắn như "dạ","anh à","về rùi" chỉ tốn vài giây để gõ phím nhưng có thể làm anh vui cả ngày. Đặc biệt là "nhớ anh".</p>
+		<p>Tiếp đến thì cho anh xin lỗi vì thời gian qua đã nhiều lần làm em không vui.</p>
+			<p>Những lần em giận, anh nhận ra mình thật sự muốn em trở lại bình thường.</p>
+       
+       
+    </div>
+	<div class="page" id="page22">
+      
+		<p>Trước đây anh luôn cảm thấy bản thân mình quá tệ, không bằng những người bạn trai khác, nên anh rất ngại khi ở gần em. Đỉnh điểm của sự tiêu cực là trong lần em giận gần đây nhất, anh đã hỏi một câu hỏi mà anh không ngờ là mình sẽ dám hỏi.</p>
+		<p>Nhưng sau khi nhận được câu trả lời là không.</p>
+       
+       
+    </div>
+	<div class="page" id="page23">
+      
+		<p>Trong lúc em ghét anh nhưng vẫn trả lời như vậy khiến anh thay đổi suy nghĩ rất nhiều.</p>
+		<p>Hứa là trong tương lai gần sẽ không như vậy nữa để bù đắp những tháng ngày tiếp xúc 1 chiều mà anh đã làm với cục cưng của anh.</p>
+
+       
+       
+    </div>
+	<div class="page" id="page24">
+      
+	
+		<p>Kết lại chúc em ngày lễ thật vui vẻ và hạnh phúc, những tháng ngày sau nụ cười đã hút hồn anh vẫn sẽ nở trên môi.</p>
+       
+       
+    </div>
+       
+       
+    </div>
+</div>
+
+
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+
+    function showPage(index) {
+        pages.forEach((page, i) => {
+            page.classList.remove('active');
+            if (i === index) {
+                page.classList.add('active');
+            }
+        });
+    }
+
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+</script>
+
+</body>
+</html>
